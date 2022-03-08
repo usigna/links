@@ -89,15 +89,24 @@ body {
 
 .logo {
   font-size: 2.5rem;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1.25px;
   margin: 0;
   position: relative;
-}
+  z-index: 1;
 
-main {
-  width: 100%;
-  text-align: center;
+  &::before {
+    content: "";
+    width: 100px;
+    height: 5px;
+    background: rgb(60,185,252);
+    background: -webkit-gradient(linear, left top, right top, from(rgba(60,185,252,1)), to(rgba(2,215,150,1)));
+    background: -o-linear-gradient(left, rgba(60,185,252,1) 0%, rgba(2,215,150,1) 100%);
+    background: linear-gradient(90deg, rgba(60,185,252,1) 0%, rgba(2,215,150,1) 100%); 
+    border-radius: 25px;
+    position: absolute;
+    left: 3.5px;
+    bottom: 3.5px;
+    z-index: -1;
+  }
 }
 
 /* section */
@@ -120,21 +129,60 @@ main {
   display: block;
   width: 250px;
   color: $whiteColor;
-  background-color: $blackColor;
   text-decoration: none;
   font-size: 1.8rem;
   padding: 0.8rem;
   text-align: center;
-  border: 1px solid $blueColor;
-  border-radius: 25px;
-  -webkit-transition: background 0.2s, color 0.2s;
-  -o-transition: background 0.2s, color 0.2s;
-  transition: background 0.2s, color 0.2s;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(60,185,252);
+    background: -webkit-gradient(linear, left top, right top, from(rgba(60,185,252,1)), to(rgba(2,215,150,1)));
+    background: -o-linear-gradient(left, rgba(60,185,252,1) 0%, rgba(2,215,150,1) 100%);
+    background: linear-gradient(90deg, rgba(60,185,252,1) 0%, rgba(2,215,150,1) 100%); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    width: 99%;
+    height: 95%;
+    background-color: $blackColor;
+    position: absolute;
+    top: 2.5%;
+    left: 0.5%;
+    z-index: -1;
+    -webkit-transition: background 2s;
+    -o-transition: background 2s;
+    transition: background 2s;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(60,185,252);
+    background: -webkit-gradient(linear, left top, right top, from(rgba(60,185,252,1)), to(rgba(2,215,150,1)));
+    background: -o-linear-gradient(left, rgba(60,185,252,1) 0%, rgba(2,215,150,1) 100%);
+    background: linear-gradient(90deg, rgba(60,185,252,1) 0%, rgba(2,215,150,1) 100%); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
 
   &:hover,
   &:focus {
     color: $blackColor;
-    background-color: $blueColor;
   }
 
   @media screen and (min-width: $largeWidth) {
