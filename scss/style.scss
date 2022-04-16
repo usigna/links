@@ -159,9 +159,6 @@ body {
     top: 2.5%;
     left: 0.5%;
     z-index: -1;
-    -webkit-transition: background 2s;
-    -o-transition: background 2s;
-    transition: background 2s;
   }
 
   &:hover::after,
