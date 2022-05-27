@@ -13,3 +13,10 @@
   -ms-flex-pack: $justifyContent;
   justify-content: $justifyContent;
 }
+
+@mixin gradient() {
+  background: rgb(60,185,252);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(60,185,252,1)), to(rgba(2,215,150,1)));
+  background: -o-linear-gradient(left, rgba(60,185,252,1) 0%, rgba(2,215,150,1) 100%);
+  background: linear-gradient(90deg, rgba(60,185,252,1) 0%, rgba(2,215,150,1) 100%); 
+}
