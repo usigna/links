@@ -42,21 +42,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* web accessibility */
-.sr-only {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-  white-space: nowrap !important;
-}
-
 /* container */
 .container {
   width: 100%;
@@ -167,38 +152,13 @@ body {
     z-index: -1;
   }
 
-  .arrow {
-    display: inline-block;
-    margin-left: 1rem;
-    @include gradient();
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
   &:hover,
   &:focus {
     color: $blackColor;
-
-    .arrow {
-      background: none $blackColor;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
   }
 
   @media screen and (min-width: $largeWidth) {
     width: 350px;
-
-    .arrow {
-      display: none;
-    }
-
-    &:hover,
-    &:focus {
-      .arrow {
-        display: inline-block;
-      }
-    }
   }
 }
 
