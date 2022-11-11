@@ -19,7 +19,7 @@ body {
   position: relative;
   scroll-behavior: smooth;
   font-size: 62.25%;
-  background: $blackColor;
+  background-color: $blackColor;
 }
 
 body {
@@ -33,13 +33,18 @@ body {
 
 .wrapper {
   width: 90%;
-  max-width: 1250px;
+  max-width: 1350px;
   margin: 0 auto;
   font-size: 1.6rem;
   font-weight: 400;
   color: $whiteColor;
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
+  text-align: center;
+
+  @media screen and (min-width: $largeWidth) {
+    text-align: left;
+  }
 }
 
 /* web accessibility */
@@ -57,24 +62,55 @@ body {
   white-space: nowrap;
 }
 
-/* container */
-.container {
+/* background decoration */
+.background {
   width: 100%;
   height: 100%;
+  position: absolute;
+  z-index: -1;
+  
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $secondBlackColor;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @media screen and (min-width: $largeWidth) {
+    &::before {
+      width: 50%;
+    }
+  }
+}
+
+/* container */
+.container {
+  height: 100%;
+  @include flex(column, flex-start, center);
+
+  @media screen and (min-width: $largeWidth) {
+    @include flex(row, center, space-between);
+  }
+}
+
+.container__item {
+  width: 100%;
 
   &--left {
-    background-color: $secondBlackColor;
+    height: 100%;
     @include flex(column, space-between, space-between);
   }
 
   &--right {
     display: none;
-    background: $blackColor;
   }
 
   @media screen and (min-width: $largeWidth) {
     width: 50%;
-
+  
     &--right {
       display: block;
       @include flex(row, center, center);
@@ -88,6 +124,7 @@ body {
 }
 
 .logo {
+  display: inline-block;
   font-size: 2.5rem;
   margin: 0;
   position: relative;
@@ -95,12 +132,12 @@ body {
 
   &::before {
     content: "";
-    width: 100px;
+    width: 110%;
     height: 5px;
     @include gradient();
     border-radius: 25px;
     position: absolute;
-    left: 3.5px;
+    left: 1.5px;
     bottom: 3.5px;
     z-index: -1;
   }
@@ -120,12 +157,15 @@ body {
 
 .list__item {
   margin: 1rem 0;
+  @include gradient();
+  padding: 0.1rem;
 }
 
 .list__link {
-  display: block;
+  display: inline-block;
   width: 250px;
   color: $whiteColor;
+  background-color: $blackColor;
   text-decoration: none;
   font-size: 1.8rem;
   padding: 0.8rem;
@@ -133,43 +173,25 @@ body {
   position: relative;
   z-index: 1;
 
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    @include gradient();
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-
-  &::after {
-    content: "";
-    width: 99%;
-    height: 95%;
-    background-color: $blackColor;
-    position: absolute;
-    top: 2.5%;
-    left: 0.5%;
-    z-index: -1;
-  }
-
-  &:hover::after,
-  &:focus::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    @include gradient();
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-
   &:hover,
   &:focus {
     color: $blackColor;
+  }
+
+  &::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    @include gradient();
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    width: 100%;
   }
 
   @media screen and (min-width: $largeWidth) {
@@ -182,9 +204,12 @@ body {
   padding: 2.5rem 0;
 }
 
+.text {
+  margin: 0;
+}
+
 /* blob */
 .blob {
   width: 500px;
   height: 500px;
-  opacity: 0.7;
 }
