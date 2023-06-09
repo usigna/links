@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Linki do portfolio, bloga oraz social mediów.">
+    <meta name="description" content="Linki do portfolio oraz social media.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <title>Usigna</title>
@@ -15,49 +15,64 @@
   <body>
     <div class="background"></div>
 
-    <div class="container wrapper">
-      <div class="container__item container__item--left">
-        <header class="header">
-          <div class="header__wrapper wrapper">
-            <h1 class="logo">Usigna</h1>
-          </div>
-        </header>
-
-        <main>
-          <section class="section">
-            <div class="section__wrapper wrapper">
-              <h2 class="sr-only">Lista linków:</h2>
-              <ul class="list">
-                <!-- <li class="list__item">
-                  <a href="https://usigna.github.io/portfolio/" target="_blank" class="list__link">Portfolio<span class="sr-only"> otwiera się w nowej karcie</span></a>
-                </li> -->
-                <li class="list__item">
-                  <a href="https://github.com/usigna" target="_blank" class="list__link">GitHub<span class="sr-only"> otwiera się w nowej karcie</span></a>
-                </li>
-                <li class="list__item">
-                  <a href="https://www.instagram.com/uwaga.kodowanko/" target="_blank" class="list__link">Instagram<span class="sr-only"> otwiera się w nowej karcie</span></a>
-                </li>
-                <li class="list__item">
-                  <a href="https://twitter.com/usigna__" target="_blank" class="list__link">Twitter<span class="sr-only"> otwiera się w nowej karcie</span></a>
-                </li>
-              </ul>
-            </div>
-          </section>
-        </main>
-
-        <footer class="footer">
-          <div class="footer__wrapper wrapper">
-            <p class="text">&copy; 2022 Usigna</p>
-          </div>
-        </footer>
+    <header class="header">
+      <div class="header__wrapper wrapper wrapper--large">
+        <h1 class="logo">Usigna</h1>
       </div>
-      <div class="container__item container__item--right">
-        <div class="blob">
-          <img src="img/blob-animation.svg" alt="" />
+    </header>
+
+    <main class="main">
+      <div class="main__wrapper wrapper wrapper--small">
+        <div class="container">
+          <h2 class="sr-only">Lista linków</h2>
+          <ul class="list">
+            <!-- <li class="list__item">
+              <a href="#" target="_blank" class="list__link">
+                <img src="img/globe-icon.svg" alt="" />
+                Portfolio
+                <span class="sr-only"> otwiera się w nowej karcie.</span>
+              </a>
+            </li>
+            <li class="list__item">
+              <a href="#" target="_blank" class="list__link">
+                <img src="img/newspaper-icon.svg" alt="" />
+                Blog
+                <span class="sr-only"> otwiera się w nowej karcie.</span>
+              </a>
+            </li> -->
+            <li class="list__item">
+              <a href="https://github.com/usigna" target="_blank" class="list__link">
+                <img src="img/github-icon.svg" alt="" />
+                GitHub
+                <span class="sr-only"> otwiera się w nowej karcie.</span>
+              </a>
+            </li>
+            <li class="list__item">
+              <a href="https://twitter.com/usigna__" target="_blank" class="list__link">
+                <img src="img/twitter-icon.svg" alt="" />
+                Twitter
+                <span class="sr-only"> otwiera się w nowej karcie.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="container">
+          <div class="blob">
+            <img src="img/blob-animate.svg" alt="Animowana kropla." class="blob-img" />
+            <button class="blob-btn" title="zatrzymaj/wznów animację">
+              <img src="img/pause-solid.svg" alt="Zatrzymaj animację." class="pause"/>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
-    <script src="https://kit.fontawesome.com/8ac493fb9a.js" crossorigin="anonymous"></script>
+    <footer class="footer">
+      <div class="footer__wrapper wrapper wrapper--large">
+        &copy; 2023 Usigna
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
   </body>
 </html>

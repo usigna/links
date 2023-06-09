@@ -15,8 +15,7 @@
 }
 
 @mixin gradient() {
-  background: rgb(60,185,252);
-  background: -webkit-gradient(linear, left top, right top, from(rgba(60,185,252,1)), to(rgba(2,215,150,1)));
-  background: -o-linear-gradient(left, rgba(60,185,252,1) 0%, rgba(2,215,150,1) 100%);
-  background: linear-gradient(90deg, rgba(60,185,252,1) 0%, rgba(2,215,150,1) 100%); 
+  background: #3CB9FC;
+  background: -o-linear-gradient(320.54deg, #3CB9FC 13.59%, #02D796 95.18%);
+  background: linear-gradient(129.46deg, #3CB9FC 13.59%, #02D796 95.18%);
 }
