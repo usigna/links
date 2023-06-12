@@ -1,5 +1,4 @@
 /* import */
-@import "./modules/fonts";
 @import "./modules/variables";
 @import "./modules/mixins";
 @import "./partials/normalize";
@@ -105,7 +104,7 @@ body {
     border-radius: 5px;
     @include gradient();
     position: absolute;
-    bottom: 1.5px;
+    bottom: 4.5px;
     left: calc(50% - 41.5px);
     z-index: -1;
   }
